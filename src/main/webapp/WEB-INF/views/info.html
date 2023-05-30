@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="java">
+<html lang="en">
+<head th:replace="/layout ::css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Created Mail Binding</h1>
+<table >
+    <tr>
+        <td>Language</td>
+        <td th:text="${mail.language}"></td>
+    </tr>    <tr>
+        <td>Page</td>
+        <td th:text="${mail.page}"></td>
+    </tr>    <tr>
+        <td>Spam filter</td>
+        <td th:text="${mail.spamFilter}"></td>
+    </tr>
+    <tr>
+        <td>Signature</td>
+        <td th:text="${mail.signature}"></td>
+    </tr>
+</table>
+</body>
+</html>

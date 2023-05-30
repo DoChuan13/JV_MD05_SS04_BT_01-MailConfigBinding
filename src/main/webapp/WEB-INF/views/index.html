@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="java">
+<html lang="en">
+<head th:replace="/layout ::css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Create Mail Binding</h1>
+<form action="/mail" method="post" th:object="${mail}">
+    <label for="language">Languages:</label>
+    <select  id="language" th:field="*{language}">
+        <option value="english">English</option>
+        <option value="vietnamese">Vietnamese</option>
+        <option value="japanese">Japanese</option>
+        <option value="chinese">Chinese</option>
+    </select><br/>
+    <label for="page">Page:</label>
+    <span>Show</span>
+    <select id="page" th:field="*{page}">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+    </select>
+    <span>emails per page</span>
+    <br/>
+    <label for="spam">Spam filter:</label>
+    <input type="checkbox" id="spam" th:field="*{spamFilter}">
+    <span>Enable spams filter</span>
+    <br/>
+    <label for="signature">Signature</label>
+    <textarea id="signature" cols="20" rows="2" th:field="*{signature}" required></textarea>
+    <br/>
+    <button type="submit">Update</button>
+    <button type="reset">Cancel</button>
+</form>
+</body>
+</html>
